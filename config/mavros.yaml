@@ -1,0 +1,5 @@
+# Minimal mavros parameters used by the launch files in this repo.
+# The device is intended to be replaced by an environment variable or
+# by passing a launch argument named `dev`.
+fcu_url: "serial:///${DEV}:115200"
+fcu_protocol: "v2.0"
