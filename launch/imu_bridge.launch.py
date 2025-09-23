@@ -5,7 +5,7 @@ def generate_launch_description():
     return LaunchDescription([
         Node(
             package='rosmower',
-            executable='imu_bridge',
+            executable='imu_bridge.py',
             name='imu_bridge',
             output='screen',
             parameters=[{
