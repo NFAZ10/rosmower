@@ -1,0 +1,12 @@
+# config/camera_params.yaml
+v4l2_camera:
+  ros__parameters:
+    video_device: "/dev/video0"
+    image_size: [1280, 720]
+    time_per_frame: [1, 30]
+    # try "YUYV" if needed
+    pixel_format: "YUYV"
+    output_encoding: "rgb8"
+  camera_frame_id: "camera_link_optical"
+    camera_name: "nexigo_n60"
+    camera_info_url: "file:///home/nfazio/.ros/camera_info/nexigo_n60.yaml"

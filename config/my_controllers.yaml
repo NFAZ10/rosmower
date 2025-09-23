@@ -1,0 +1,14 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 30
+    # use_sim_time: true
+
+    # We only run a joint_state_broadcaster here. Motor control is handled
+    # directly by the hoverboard_bridge node which listens to `/cmd_vel`.
+    joint_broad:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+# Note: The diff_drive_controller configuration has been removed because
+# the hoverboard_bridge node (serial driver) sends motor commands directly
+# from `/cmd_vel`. Keep this file minimal so the standard controller
+# manager isn't expected to drive the motors when using the hoverboard.
