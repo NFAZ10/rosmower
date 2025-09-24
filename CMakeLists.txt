@@ -33,6 +33,8 @@ install(PROGRAMS
   scripts/hoverboard_bridge_node.py
   scripts/lidar_scan_guard.py
   scripts/imu_bridge.py
+  scripts/rplidar_motor_control.cpp
+
 
   DESTINATION lib/${PROJECT_NAME}
 )
