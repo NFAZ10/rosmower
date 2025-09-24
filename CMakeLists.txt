@@ -33,8 +33,19 @@ install(PROGRAMS
   scripts/hoverboard_bridge_node.py
   scripts/lidar_scan_guard.py
   scripts/imu_bridge.py
-  scripts/rplidar_motor_control.cpp
+  scripts/rplidar_motor_control.py
 
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+# Build and install C++ rplidar motor control node
+find_package(rclcpp REQUIRED)
+find_package(sensor_msgs REQUIRED)
+find_package(std_srvs REQUIRED)
+
+
+
+install(TARGETS
 
   DESTINATION lib/${PROJECT_NAME}
 )

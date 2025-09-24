@@ -1,0 +1,10 @@
+plugins:
+  # Enable only what you need
+  - sys_status
+  - sys_time
+  - imu
+  - gps
+  - param
+  - battery
+
+  # everything else stays disabled
