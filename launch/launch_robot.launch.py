@@ -184,6 +184,20 @@ def generate_launch_description():
             'angle_compensate': True,
         }],
     )
+    relay = Node(
+        package='rosmower',              # replace with your package
+        executable='relay_control_node.py',
+        name='relay_control',
+        output='screen',
+        parameters=[{
+            'chip': 'gpiochip0',
+            'line': 17,
+            'active_high': True,
+            'relay_on_start': False
+        }]
+    )
+
+
 
     # --- Static transform from laser to base_link ---
     rplidar_tf = Node(
@@ -200,7 +214,7 @@ def generate_launch_description():
     mavros_node = Node(
         package='mavros',
         executable='mavros_node',
-        output='screen',
+       #output='screen',
         parameters=[{
             'fcu_url': fcu_url,
             'fcu_protocol': 'v2.0',
@@ -217,10 +231,11 @@ def generate_launch_description():
         DeclareLaunchArgument('use_joint_state_gui', default_value='true',
                               description='Use joint_state_publisher_gui sliders'),
         DeclareLaunchArgument('dev', default_value=DEFAULT_FCU),
-        DeclareLaunchArgument('arm', default_value='false', description='Enable motor arming if true'),
+        DeclareLaunchArgument('arm', default_value='true', description='Enable motor arming if true'),
 
         quiet_env,
         rsp,
+        relay,
         jsp_group,            # <-- NEW: joint state publisher (headless or GUI)
         #twist_mux_to_controller,
         #twist_mux_to_bridge,
@@ -230,4 +245,5 @@ def generate_launch_description():
         delayed_rplidar,
         rosbridge_node,
         mavros_node,
+        
     ])

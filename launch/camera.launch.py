@@ -23,7 +23,7 @@ def _build_camera_node(context, *args, **kwargs):
             'video_device': video_device,
             'image_size': [width, height],
             'time_per_frame': [1, fps],      # 1/fps
-            'pixel_format': fmt,             # MJPG or YUYV
+           # 'pixel_format': mjpg,             # MJPG or YUYV
             'output_encoding': 'bgr8',       # common OpenCV encoding; convert if needed
             'camera_frame_id': frame
         }]

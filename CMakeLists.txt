@@ -34,7 +34,9 @@ install(PROGRAMS
   scripts/lidar_scan_guard.py
   scripts/imu_bridge.py
   scripts/rplidar_motor_control.py
-
+  scripts/battery_splitter.py
+  scripts/relay_control_node.py
+  scripts/tof_guard.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
