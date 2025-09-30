@@ -15,10 +15,17 @@ def generate_launch_description():
                 'serial_baudrate': 115200,
                 'frame_id': 'laser_frame',
                 'angle_compensate': True,
-                # Optional tuning:
-                # 'scan_mode': 'Sensitivity',  # or 'Standard'
-                # 'scan_frequency': 10.0,
-                # 'max_distance': 12.0,
+                # Accuracy improvements:
+                'scan_mode': 'Sensitivity',  # Use high sensitivity mode
+                'scan_frequency': 5.0,       # Lower frequency for more samples per rotation
+                'max_distance': 5.0,
+                'ignore_array': '',          # Remove any ignored angles
+                'auto_standby': False,       # Keep LIDAR spinning consistently
+                # Quality filtering:
+                'min_distance': 0.05,        # Filter out very close readings (noise)
+                'angle_excludemin': -180.0,  # Include full 360° range
+                'angle_excludemax': 180.0,
+                'auto_standby': False,
             }],
         ),
          Node(
