@@ -36,7 +36,8 @@ install(PROGRAMS
   scripts/rplidar_motor_control.py
   scripts/battery_splitter.py
   scripts/relay_control_node.py
-  scripts/tof_guard.py
+  scripts/vl53_bridge.py
+  scripts/tof_to_scan.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

@@ -197,6 +197,14 @@ def generate_launch_description():
         }]
     )
 
+    tof = Node(
+    package='rosmower',      # replace with your package
+    executable='tof_to_scan.py',# matches entry point or script name
+    name='tof_to_scan',
+    output='screen'
+)
+
+
 
 
     # --- Static transform from laser to base_link ---
@@ -245,5 +253,6 @@ def generate_launch_description():
         delayed_rplidar,
         rosbridge_node,
         mavros_node,
+        tof,
         
     ])
